@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What
 
-Things you may want to cover:
+An API for shopping
 
-* Ruby version
+## Why
 
-* System dependencies
+Testing [Grape](https://github.com/ruby-grape/grape/blob/v0.19.2/README.md) as a Rails API back-end.
 
-* Configuration
+## How
 
-* Database creation
+Ensure you have Ruby and Rails installed, then clone the repo and run the following in the terminal:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+bundle install
+bundle exec rails server
+```
