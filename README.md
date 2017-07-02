@@ -14,5 +14,6 @@ Ensure you have Ruby and Rails installed, then clone the repo and run the follow
 
 ```sh
 bundle install
+bundle exec rake db:setup
 bundle exec rails server
 ```
