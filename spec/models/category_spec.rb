@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  it 'exists' do
-    expect(Category.new).to be_truthy
+  it 'creates a category with a name' do
+    category = Category.create(name: 'Games')
+    expect(category.name).to eq('Games')
   end
 end
