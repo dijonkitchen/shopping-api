@@ -13,6 +13,7 @@ RSpec.describe Order, type: :model do
   end
 
   it 'has many products' do
-    expect(order.products).to be_truthy
+    order.products.create(name: 'Settlers of Catan')
+    expect(order.products.last.name).to eq('Settlers of Catan')
   end
 end
