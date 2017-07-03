@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/dijonkitchen/shopping-api/badges/gpa.svg)](https://codeclimate.com/github/dijonkitchen/shopping-api)
+
 [![Build Status](https://travis-ci.org/dijonkitchen/shopping-api.svg?branch=master)](https://travis-ci.org/dijonkitchen/shopping-api)
 
 # README
