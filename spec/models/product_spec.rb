@@ -10,4 +10,9 @@ RSpec.describe Product, type: :model do
   it 'has many orders' do
     expect(product.orders).to be_truthy
   end
+
+  it 'has many categories' do
+    product.categories.create(name: 'Travel Gear')
+    expect(product.categories.last.name).to eq('Travel Gear')
+  end
 end
