@@ -18,6 +18,23 @@ module Shopt
           Customer.find(params[:id])
         end
       end
+    end
+
+    resource :orders do
+      desc 'Returns all orders'
+      get do
+        Order.all
+      end
+
+      desc 'Return an order'
+      params do
+        requires :id, type: Integer, desc: 'Order ID.'
+      end
+      route_param :id do
+        get do
+          Order.find(params[:id])
+        end
+      end
 
     end
   end
