@@ -14,4 +14,9 @@ RSpec.describe Customer, type: :model do
   it 'has a last name' do
     expect(customer.last_name).to eq('Chen')
   end
+
+  it 'has many orders' do
+    2.times { customer.orders.create }
+    expect(customer.orders.length).to be >= 2
+  end
 end
