@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/dijonkitchen/shopping-api.svg?branch=master)](https://travis-ci.org/dijonkitchen/shopping-api)
 
+[![Test Coverage](https://codeclimate.com/github/dijonkitchen/shopping-api/badges/coverage.svg)](https://codeclimate.com/github/dijonkitchen/shopping-api/coverage)
+
 # README
 
 ## What
