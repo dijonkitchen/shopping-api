@@ -17,3 +17,6 @@
 
 # Ignore RSpec examples
 spec/examples.txt
+
+# Simplecov files
+coverage/
