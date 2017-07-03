@@ -11,4 +11,8 @@ RSpec.describe Order, type: :model do
   it 'defaults status to waiting for delivery' do
     expect(order.status).to eq(0)
   end
+
+  it 'has many products' do
+    expect(order.products).to be_truthy
+  end
 end
