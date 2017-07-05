@@ -19,4 +19,13 @@ RSpec.describe Customer, type: :model do
     2.times { customer.orders.create }
     expect(customer.orders.length).to be >= 2
   end
+
+  it 'shows number purchased in a category' do
+    category = Category.create(name: 'Books')
+    product = category.products.create(name: 'The Snowball')
+    order = customer.orders.create
+    order.products << product
+    count = customer.num_purchased_in(category)
+    expect(count).to eq(1)
+  end
 end
