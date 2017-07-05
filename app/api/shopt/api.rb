@@ -35,7 +35,14 @@ module Shopt
           Order.find(params[:id])
         end
       end
-
     end
+
+    resource :products do
+      desc 'Returns all products'
+      get do
+        Product.all
+      end
+    end
+
   end
 end
