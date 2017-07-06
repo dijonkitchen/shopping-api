@@ -38,9 +38,18 @@ module Shopt
     end
 
     resource :products do
-      desc 'Returns all products'
-      get do
-        Product.all
+      desc 'Returns quantity sold per month'
+      params do
+        requires :id, type: Integer, desc: 'Product ID.'
+        optional :per, type: String, desc: 'Time interval',
+                  default: 'month', values: ['day', 'week', 'month']
+        optional :starting, type: Date, desc: 'Beginning date', default: Date.today - 1.year
+        optional :ending, type: Date, desc: 'Ending date', default: Date.today
+      end
+      route_param :id do
+        get do
+          Product.find(params[:id]).sold(per: params[:per], starting: params[:starting], ending: params[:ending])
+        end
       end
     end
 
