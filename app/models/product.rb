@@ -23,9 +23,19 @@ class Product < ApplicationRecord
     when 'day'
       amounts
     when 'week'
-
+      summary = Hash.new(0)
+      amounts.each do |date, count|
+        period_end = [date.end_of_week, ending + 1.day].min
+        summary[period_end] += count
+      end
+      summary
     when 'month'
-
+      summary = Hash.new(0)
+      amounts.each do |date, count|
+        period_end = [date.end_of_month, ending + 1.day].min
+        summary[period_end] += count
+      end
+      summary
     end
   end
 end
