@@ -16,4 +16,13 @@ RSpec.describe 'Customers', type: :request do
       expect(JSON.parse(response.body)['first_name']).to eq('J')
     end
   end
+
+  describe 'GET /customers/:id/orders' do
+    it 'successful request' do
+      customer = Customer.create(first_name: 'J', last_name: 'C')
+      2.times { customer.orders.create }
+      get "/api/customers/#{customer.id}/orders"
+      expect(response).to have_http_status(200)
+    end
+  end
 end
