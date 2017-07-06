@@ -17,6 +17,12 @@ module Shopt
         get do
           Customer.find(params[:id])
         end
+
+        route_param :orders do
+          get do
+            Customer.find(params[:id]).orders
+          end
+        end
       end
     end
 
