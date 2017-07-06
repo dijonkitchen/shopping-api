@@ -17,8 +17,8 @@ RSpec.describe Product, type: :model do
   end
 
   it 'shows quantity sold per day' do
-    expect(product.sold[Date.today]).to eq(nil)
+    expect(product.sold(per: 'day')[Date.today]).to eq(nil)
     Customer.last.orders.create.products << product
-    expect(product.sold[Date.today]).to eq(1)
+    expect(product.sold(per: 'day')[Date.today]).to eq(1)
   end
 end
