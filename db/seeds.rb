@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-(0..9).each do |num|
-  Customer.create(first_name: "Customer #{num}", last_name: 'Last name')
+p = Product.create(name: "Product x")
+
+(0..20).each do |num|
+  c = Customer.create(first_name: "Customer #{num}", last_name: 'Last name')
+  o = c.orders.create(created_at: Time.at((1.year.to_f)*rand + (Time.now-1.year).to_f))
+  o.products << Product.last
 end
