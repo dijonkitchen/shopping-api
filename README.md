@@ -28,6 +28,11 @@ bundle exec rake db:setup
 bundle exec rails server
 ```
 
+To run tests and coverage:
+```sh
+bundle exec rspec
+```
+
 ## Where
 
 You can track progress in the [Projects](https://github.com/dijonkitchen/shopping-api/projects) section.
