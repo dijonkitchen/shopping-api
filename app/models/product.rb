@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :category_products
   has_many :categories, through: :category_products
 
-  def sold(per:, starting: Date.today - 1.year, ending: Date.today)
+  def sold(per:, starting: Time.zone.today - 1.year, ending: Time.zone.today)
     # SELECT COUNT(orders.id), DATE(orders.created_at)
     # FROM orders
     # INNER JOIN order_products
